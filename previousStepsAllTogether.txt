@@ -1,3 +1,6 @@
+***********************************************************************************************************************************************************************
+************************************ THIS IS A GUIDANCE WHERE EVERYTHING HAVE BEEN PUT TOGETHER, JUST IN THE ORDER HOW I PREFER IT ************************************
+
 // GUIDANCE for Using terminal, Git, Node.js, npm, Express and GitHub step by step
 
 //THESE ARE STEPS FOR WINDOWS AND VS CODE USERS
