@@ -1,0 +1,11 @@
+// GUIDANCE for adding a project to a GitHub repository through terminal step by step
+
+//THESE ARE STEPS FOR WINDOWS AND VS CODE USERS
+
+// *** ADDING A PROJECT TO A GITHUB REPOSITORY FROM THE COMMAND LINE (TERMINAL) ***
+
+1. git remote add origin https://github.com/{YOURACCOUNTNAME}/{NAMEOFYOURREPOSITORY}.git
+
+2. git push -u origin master
+
+// "master" because you'll probably be on the master branch

@@ -1,0 +1,35 @@
+// GUIDANCE for adding Git to your project step by step
+
+//THESE ARE STEPS FOR WINDOWS AND VS CODE USERS
+
+// *** ADDING GIT TO YOUR PROJECT ***
+
+1. At this point I'd suggest you to create a file called ".gitignore".
+
+2. Open the .gitignore file and type on every new line names of files and folders you like to hide. 
+Example: 
+mySecrets.txt
+myAPIs.txt
+
+// I prefer to create .gitignore file and to add files and folders into it before setting first git commit
+
+3. Then initialize Git. Terminal: git init
+
+4. That command creates a hidden file called ".git". To see what is currentlly inside of the staging area type in the terminal: git status
+You can check the git status anytime you want.
+The untracked files will be colored red and the tracked files will be shown as green.
+
+5. To add all files to the staging area type in the terminal: git add .
+If you only like to add certain file or folder than type: git add nameOfTheFile
+
+// If you want to take all files BACK of the staging area type in the terminal: git rm --cached -r .
+// If you want to take a certain file BACK of the staging area type in the terminal: git rm --cached -r nameOfTheFile
+
+6. After that's done we can create our first commit by typing in the terminal: git commit -m "nameOfCommit"
+
+7. To see which commits have been made type in the terminal: git log
+
+8. If you changed anything in the tracked files and you'd check their git status then you'll see that their color got red, because of the changes which you've done. To see the diffrences between the old and the actual file type in the terminal: git diff
+
+9. If you *** don't like *** to keep the changes type in the terminal: git checkout nameOfTheFile
+If you *** like *** to keep the changes type in the terminal: git commit -m "nameOfNewCommit" 

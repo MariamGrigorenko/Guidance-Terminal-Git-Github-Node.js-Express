@@ -1,0 +1,147 @@
+// GUIDANCE for Using terminal, Git, Node.js, npm, Express and GitHub step by step
+
+//THESE ARE STEPS FOR WINDOWS AND VS CODE USERS
+
+
+
+
+
+// *** CREATING NEW PROJECT USING TERMINAL ***
+
+1. Open any terminal (Git and Node.js have to be installed, google and find them in your browser, then download for you Windows version).
+
+2. Move to the Desktop. Terminal: cd Desktop
+
+3. Create new folder. Terminal: mkdir NewProject
+
+4. Move into the created folder. Terminal: cd NewProject
+
+5. Create files for your project. Terminal: touch index.html styles.css app.js
+
+6. Open your project in VS Code. Terminal: code .
+
+7. Open Terminal in VS Code: STRG + UMSCHALTTASTE + ö
+
+8. Now you have to initialize nmp, this command creates new file called "package.json". Terminal: npm init  
+
+9. You can just hit ENTER every time to keep the settings as default. You'll be able to change the default settings later when ever you like. These are saved in the package.json file.
+
+10. Now you can install any other nmp package(s) of your choice. We'll continue with Express and Body-Parser.
+
+11. Terminal: npm install express body-parser
+
+12. That command created "node_modules" folder and "package-lock.json" file with downloaded npm packages. Every new npm package will be saved there.
+
+//Now you can copy and paste the code below into your app.js file if you work with Node.js and Express 
+
+// *** KEEP THE CODE BELOW FOR YOUR APP.JS FILE ***
+
+// *** Create consts for your npms ***
+const express = require("express");
+const bodyParser = require("body-parser");
+//const https = require("https"); unlock when you use HTTPS
+
+
+// *** Create other consts ***
+const app = express();
+const port = process.env.PORT || 3000;
+
+
+// *** Body Parser ***
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// *** Static Folder ***
+// Create a "public" folder and put your CSS files and images in separate folders in it: "public/CSS/styles.css", ...
+app.use(express.static(__dirname + "/public"));
+
+
+// *** Tracking HTML File ***
+/* Create an HTML file and fill it up with code, otherwise you won't see anything
+Add: <form method="post" action="/" class="" id="">{YOUR CODE: Hs, Ps IMAGEs, DIVs, and so on}</form>
+It's the start page you see when you run your server */
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "yourhtmlfile.html");
+});
+
+
+// There can be several APP.GETs(...)
+// Add new APP.GET(...) for every new page of your website that comes after "/" => "yourhtmlfile/example.html"
+/* app.get("/example.html", function (req, res) {
+  res.sendFile(__dirname + "example.html");
+}); */
+
+
+// *** FUNCTIONS FOR YOUR HTML FILE ***
+// app.post ("/", ...) comes from the <form method="post" action="/" class="" id="">{YOUR CODE: Hs, Ps IMAGEs, DIVs, and so on}</form>
+app.post("/", (req, res) => {
+});
+
+
+// There can be several APP.POSTs(...)
+//EXAMPLE: <form method="post" action="/example.html" class="" id="">{YOUR CODE: Hs, Ps IMAGEs, DIVs, and so on}</form>
+/* app.post("/example.html", function(req, res) {
+  res.redirect("/");
+}) */
+
+
+// *** YOUR LOCALHOST PORT ***
+app.listen(port, () => {
+  console.log(`Server started on port ${port}!`);
+  });
+
+
+
+
+
+
+// *** ADDING GIT TO YOUR PROJECT ***
+
+1. At this point I'd suggest you to create a file called ".gitignore".
+
+2. Open the .gitignore file and type on every new line names of files and folders you like to hide. 
+Example: 
+mySecrets.txt
+myAPIs.txt
+
+// I prefer to create .gitignore file and to add files and folders into it before setting first git commit
+
+3. Then initialize Git. Terminal: git init
+
+4. That command creates a hidden file called ".git". To see what is currentlly inside of the staging area type in the terminal: git status
+You can check the git status anytime you want.
+The untracked files will be colored red and the tracked files will be shown as green.
+
+5. To add all files to the staging area type in the terminal: git add .
+If you only like to add certain file or folder than type: git add nameOfTheFile
+
+// If you want to take all files BACK of the staging area type in the terminal: git rm --cached -r .
+// If you want to take a certain file BACK of the staging area type in the terminal: git rm --cached -r nameOfTheFile
+
+6. After that's done we can create our first commit by typing in the terminal: git commit -m "nameOfCommit"
+
+7. To see which commits have been made type in the terminal: git log
+
+8. If you changed anything in the tracked files and you'd check their git status then you'll see that their color got red, because of the changes which you've done. To see the diffrences between the old and the actual file type in the terminal: git diff
+
+9. If you *** don't like *** to keep the changes type in the terminal: git checkout nameOfTheFile
+If you *** like *** to keep the changes type in the terminal: git commit -m "nameOfNewCommit" 
+
+
+
+
+
+
+// *** ADDING A PROJECT TO A GITHUB REPOSITORY FROM THE COMMAND LINE (TERMINAL) ***
+
+1. git remote add origin https://github.com/{YOURACCOUNTNAME}/{NAMEOFYOURREPOSITORY}.git
+
+2. git push -u origin master
+
+// "master" because you'll probably be on the master branch
+
+
+
+
+
+
